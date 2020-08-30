@@ -1,0 +1,21 @@
+version: "3.4"
+
+services: 
+    dev:
+        container_name: dev
+        build:
+            context: .
+            target: dev
+        environment: 
+        - PORT=3000
+        ports: 
+        - "3002:3000"
+    prod:
+        container_name: prod
+        build:
+            context: .
+            target: prod
+        environment: 
+            - PORT=3000
+        ports: 
+            - "3003:3000"
